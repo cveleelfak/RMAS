@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">GasGo</string>
+
+
+    <string name="welcome_text">Dobrodosli</string>
+    <string name="login_text">Prijavite se na GasGo aplikaciju za nastavak</string>
+    <string name="email_input_text">Email adresa</string>
+    <string name="email_example">example@gmail.com</string>
+    <string name="password_input_text">Lozinka</string>
+    <string name="login_button">Prijavi se</string>
+    <string name="credentials_error">Uneti podaci nisu ispravni</string>
+    <string name="password_example">********</string>
+    <string name="email_badly_formatted">Neispravan format email adrese</string>
+    <string name="register">Dobrodošli u GasGo</string>
+    <string name="register_text">Kreirajte nalog</string>
+    <string name="username_text">Korisničko ime</string>
+    <string name="full_name_text">Puno ime</string>
+    <string name="phone_number_text">Broj telefona</string>
+    <string name="photo_text">Profilna slika</string>
+    <string name="username_example_text">petar.petrovic</string>
+    <string name="full_name_example_text">Petar Petrovic</string>
+    <string name="phone_number_example_text">0601234567</string>
+    <string name="already_have_account">Već imate nalog? </string>
+    <string name="lets_login">Prijavi se</string>
+    <string name="email_used">Postoji nalog sa ovom adresom</string>
+    <string name="short_password">Lozinka mora imati najmanje 6 karaktera</string>
+
+    <string name="notification_chanel_name">Notifikacija</string>
+    <string name="search_text">Pretraži</string>
+
+
+    <string name="add_new_beach_heading">Dodaj novu pumpu na ovoj lokaciji</string>
+
+
+
 </resources>
