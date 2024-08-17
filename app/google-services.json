@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "878145435061",
+    "project_id": "gasgo-2216e",
+    "storage_bucket": "gasgo-2216e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878145435061:android:206b5883a6fd730f3b55fc",
+        "android_client_info": {
+          "package_name": "com.example.gasgo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMa4SHfI-AOYfu1ohkwfKKUA5GM-H8dtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
