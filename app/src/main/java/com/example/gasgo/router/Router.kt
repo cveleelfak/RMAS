@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.gasgo.screens.IndexScreen
 import com.example.gasgo.screens.LoginScreen
+import com.example.gasgo.screens.RegisterScreen
 import com.example.gasgo.viewmodels.AuthViewModel
 
 @Composable
@@ -23,6 +24,12 @@ fun Router(
         }
         composable(Routes.indexScreen){
             IndexScreen()
+        }
+        composable(Routes.registerScreen){
+            RegisterScreen(
+                viewModel = viewModel,
+                navController = navController
+            )
         }
 
     }
