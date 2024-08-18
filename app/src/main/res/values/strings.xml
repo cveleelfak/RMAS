@@ -17,19 +17,18 @@
     <string name="full_name_text">Puno ime</string>
     <string name="phone_number_text">Broj telefona</string>
     <string name="photo_text">Profilna slika</string>
-    <string name="username_example_text">petar.petrovic</string>
-    <string name="full_name_example_text">Petar Petrovic</string>
-    <string name="phone_number_example_text">0601234567</string>
+    <string name="username_example_text">djordje.djordjevic</string>
+    <string name="full_name_example_text">Djordje Djordjevic</string>
+    <string name="phone_number_example_text">0631234567</string>
     <string name="already_have_account">Već imate nalog? </string>
     <string name="lets_login">Prijavi se</string>
     <string name="email_used">Postoji nalog sa ovom adresom</string>
     <string name="short_password">Lozinka mora imati najmanje 6 karaktera</string>
-
     <string name="notification_chanel_name">Notifikacija</string>
     <string name="search_text">Pretraži</string>
 
 
-    <string name="add_new_beach_heading">Dodaj novu pumpu na ovoj lokaciji</string>
+    <string name="add_new_gasStation_heading">Dodaj novu pumpu na ovoj lokaciji</string>
 
 
 

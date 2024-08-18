@@ -1,9 +1,15 @@
 package com.example.gasgo.screens.components
 
+import android.net.Uri
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -32,9 +38,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -44,6 +52,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.example.gasgo.R
 import com.example.gasgo.ui.theme.buttonDisabledColor
 import com.example.gasgo.ui.theme.greyTextColor
@@ -64,6 +73,73 @@ fun loginImage(){
                 .width(210.dp)
                 .height(210.dp)
         )
+    }
+}
+
+@Composable
+fun registerImage(
+    selectedImageUri: MutableState<Uri?>,
+    isError: MutableState<Boolean>
+
+) {
+    val singlePhotoPickerLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.PickVisualMedia(),
+        onResult = { uri ->
+            selectedImageUri.value = uri
+        }
+    )
+
+    val interactionSource = remember { MutableInteractionSource() }
+
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(140.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        if (selectedImageUri.value == Uri.EMPTY) {
+            Image(
+                painter = painterResource(id = R.drawable.profile),
+                contentDescription = "Profile Image",
+                modifier = Modifier
+                    .size(140.dp)
+                    .border(
+                        if (isError.value) BorderStroke(2.dp, Color.Red) else BorderStroke(
+                            0.dp,
+                            Color.Transparent
+                        )
+                    )
+                    .clip(RoundedCornerShape(70.dp)) // 50% border radius
+                    .clickable(
+                        interactionSource = interactionSource,
+                        indication = null
+                    ) {
+                        singlePhotoPickerLauncher.launch(
+                            PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+                        )
+                    }
+            )
+        } else {
+            selectedImageUri.value?.let { uri ->
+                AsyncImage(
+                    model = uri,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(140.dp)
+                        .clip(RoundedCornerShape(70.dp)) // 50% border radius
+                        .background(Color.LightGray)
+                        .clickable(
+                            interactionSource = interactionSource,
+                            indication = null
+                        ) {
+                            singlePhotoPickerLauncher.launch(
+                                PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)
+                            )
+                        },
+                    contentScale = ContentScale.Crop
+                )
+            }
+        }
     }
 }
 
