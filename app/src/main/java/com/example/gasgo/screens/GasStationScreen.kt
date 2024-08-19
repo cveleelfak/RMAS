@@ -107,7 +107,7 @@ fun GasStationScreen(
             item{ greyTextBigger(textValue = gasStation.description.replace('+', ' ')) }
             item{ Spacer(modifier = Modifier.height(20.dp)) }
             item{ Text(text = "Galerija Benzinske Stanice", style= TextStyle(fontSize = 20.sp)) };
-//            item{ CustomCrowdIndicator(crowd = 1)}
+
             item{ Spacer(modifier = Modifier.height(10.dp)) }
             item { CustomGasStationGallery(images = gasStation.galleryImages) }
         }
