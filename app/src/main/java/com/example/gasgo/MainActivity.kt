@@ -17,6 +17,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.gasgo.ui.theme.GasGoTheme
 import com.example.gasgo.viewmodels.AuthViewModel
 import com.example.gasgo.viewmodels.AuthViewModelFactory
+import com.example.gasgo.viewmodels.GasStationViewModel
+import com.example.gasgo.viewmodels.GasStationViewModelFactory
 
 class MainActivity : ComponentActivity() {
 
@@ -24,10 +26,14 @@ class MainActivity : ComponentActivity() {
         AuthViewModelFactory()
     }
 
+    private val gasStationViewModel: GasStationViewModel by viewModels{
+        GasStationViewModelFactory()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            GasGo(userViewModel)
+            GasGo(userViewModel, gasStationViewModel)
 
 
         }

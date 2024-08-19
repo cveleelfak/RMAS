@@ -6,6 +6,6 @@ data class Rate (
     @DocumentId
     val id: String = "",
     val userId: String = "",
-    val GasStationId: String = "",
+    val gasStationId: String = "",
     var rate: Int = 0
 )

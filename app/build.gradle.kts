@@ -71,4 +71,6 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     debugImplementation("androidx.compose.ui:ui-tooling:1.6.7")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.6.7")
+    implementation(kotlin("script-runtime"))
+    implementation("com.google.code.gson:gson:2.8.6")
 }
