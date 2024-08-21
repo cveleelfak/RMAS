@@ -34,7 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.gasgo.ui.theme.buttonDisabledColor
 import com.example.gasgo.ui.theme.greyTextColor
-import com.example.gasgo.ui.theme.lightMailColor
+import com.example.gasgo.ui.theme.lightMainColor
 import com.example.gasgo.ui.theme.mainColor
 
 @Composable
@@ -90,7 +90,7 @@ fun RateGasStationDialog(
                                     else Icons.Filled.StarBorder,
                                     contentDescription = "",
                                     tint =
-                                    if(rate.value >= i) lightMailColor
+                                    if(rate.value >= i) lightMainColor
                                     else greyTextColor,
                                     modifier = Modifier
                                         .size(50.dp)

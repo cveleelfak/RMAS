@@ -275,8 +275,8 @@ fun IndexScreen(
                                 val encodedGasStationJson =
                                     URLEncoder.encode(gasStationJson, StandardCharsets.UTF_8.toString())
 
-                                val beachesJson = Gson().toJson(gasStationMarkers)
-                                val encodedGasStationsJson = URLEncoder.encode(beachesJson, StandardCharsets.UTF_8.toString())
+                                val gasStationsJson = Gson().toJson(gasStationMarkers)
+                                val encodedGasStationsJson = URLEncoder.encode(gasStationsJson, StandardCharsets.UTF_8.toString())
 
                                 navController?.navigate(Routes.gasStationScreen + "/$encodedGasStationJson/$encodedGasStationsJson")
                                 true
