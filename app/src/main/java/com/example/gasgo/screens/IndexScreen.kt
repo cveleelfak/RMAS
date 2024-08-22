@@ -61,7 +61,7 @@ import com.example.gasgo.screens.components.bitmapDescriptorFromVector
 import com.example.gasgo.screens.components.mapFooter
 import com.example.gasgo.screens.components.mapNavigationBar
 import com.example.gasgo.screens.gasStations.AddNewGasStationBottomSheet
-import com.example.gasgo.screens.gasStations.FilterBottomSheet
+import com.example.gasgo.screens.gasStations.FiltersBottomSheet
 import com.example.gasgo.ui.theme.greyTextColor
 import com.example.gasgo.ui.theme.mainColor
 import com.example.gasgo.viewmodels.AuthViewModel
@@ -228,8 +228,8 @@ fun IndexScreen(
             if(isAddNewBottomSheet.value)
                 AddNewGasStationBottomSheet(gasStationViewModel!!, myLocation, sheetState)
             else
-                //FiltersBottomSheet(gasStationViewModel!!, viewModel!!, allGasStations, sheetState, isFiltered,isFilteredIndicator, filteredGasStations, gasStationMarkers, myLocation.value)
-                FilterBottomSheet()
+                FiltersBottomSheet(gasStationViewModel!!, viewModel!!, allGasStations, sheetState, isFiltered,isFilteredIndicator, filteredGasStations, gasStationMarkers, myLocation.value)
+
             },
         sheetShape = RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp),
         modifier = Modifier.fillMaxSize()
@@ -243,7 +243,7 @@ fun IndexScreen(
             ) {
                 markers.forEach { marker ->
                     val icon = bitmapDescriptorFromVector(
-                        context, R.drawable.currentlocation
+                        context, R.drawable.currentlocation_foreground
                     )
                     Marker(
                         state = rememberMarkerState(position = marker),

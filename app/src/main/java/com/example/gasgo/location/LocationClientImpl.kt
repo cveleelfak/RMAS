@@ -1,5 +1,6 @@
 package com.example.gasgo.location
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.location.Location
 import android.location.LocationManager
@@ -17,6 +18,7 @@ class LocationClientImpl(
     private val context: Context,
     private val client: FusedLocationProviderClient
 ) : LocationClient {
+    @SuppressLint("MissingPermission")
     override fun getLocationUpdates(interval: Long): Flow<Location> {
         return callbackFlow {
             if(!context.hasLocationPermission()){
