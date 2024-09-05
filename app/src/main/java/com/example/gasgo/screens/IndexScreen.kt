@@ -255,10 +255,8 @@ fun IndexScreen(
                 Log.d("Is Filtered", isFiltered.value.toString())
                 if(!isFiltered.value) {
                     gasStationMarkers.forEach { marker ->
-                        val icon = bitmapDescriptorFromUrlWithRoundedCorners(
-                            context,
-                            marker.mainImage,
-                            10f,
+                        val icon = bitmapDescriptorFromVector(
+                            context, R.drawable.gaspump_foreground
                         )
                         Marker(
                             state = rememberMarkerState(
@@ -268,7 +266,7 @@ fun IndexScreen(
                                 )
                             ),
                             title = "Moja Lokacija",
-                            icon = icon.value ?: BitmapDescriptorFactory.defaultMarker(),
+                            icon = icon ?: BitmapDescriptorFactory.defaultMarker(),
                             snippet = marker.description,
                             onClick = {
                                 val gasStationJson = Gson().toJson(marker)
@@ -286,10 +284,8 @@ fun IndexScreen(
                 }else{
                     Log.d("Filtered", filteredGasStations.count().toString())
                     filteredGasStations.forEach { marker ->
-                        val icon = bitmapDescriptorFromUrlWithRoundedCorners(
-                            context,
-                            marker.mainImage,
-                            10f,
+                        val icon = bitmapDescriptorFromVector(
+                            context, R.drawable.gaspump_foreground
                         )
                         Marker(
                             state = rememberMarkerState(
@@ -299,7 +295,7 @@ fun IndexScreen(
                                 )
                             ),
                             title = "Moja Lokacija",
-                            icon = icon.value ?: BitmapDescriptorFactory.defaultMarker(),
+                            icon = icon ?: BitmapDescriptorFactory.defaultMarker(),
                             snippet = marker.description,
                             onClick = {
                                 val gasStationJson = Gson().toJson(marker)

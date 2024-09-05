@@ -893,7 +893,7 @@ fun mapFooter(
             IconButton(onClick = openAddNewGasStation,
                 modifier = Modifier.fillMaxSize()) {
                 Image(
-                    painter = painterResource(id = R.drawable.searchimage),
+                    painter = painterResource(id = R.drawable.addgas),
                     contentDescription = "",
                     modifier = Modifier.fillMaxSize()
                 )

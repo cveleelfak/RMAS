@@ -157,8 +157,8 @@ fun UserProfileScreen(
                         horizontalArrangement = Arrangement.SpaceEvenly,
                         modifier = Modifier.fillMaxWidth(),
                     ) {
-                        TextWithLabel(label = "Dodatih benzinskih stanica", count = gasStations.count().toString())
-                        TextWithLabel(label = "Posećenih benzinskih stanica", count = "2")
+                        TextWithLabel(label = "Dodatih stanica", count = gasStations.count().toString())
+                        TextWithLabel(label = "Posećenih stanica", count = "2")
                         TextWithLabel(label = "Broj bodova", count = userData?.points.toString())
                     }
 
